@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# Project Setup & Usage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project runs locally on **[http://localhost:3000/](http://localhost:3000/)** and is a full‑stack web application built using modern JavaScript technologies.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Tech Stack
 
-### `npm start`
+### Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React (Hooks)
+- JavaScript / TypeScript
+- HTML5, CSS3
+- Axios (API calls)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
 
-### `npm test`
+- Node.js
+- Express.js
+- MongoDB (MongoDB Atlas)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+project-root/
+│── client/        # Frontend (React)
+│── server/        # Backend (Node + Express)
+│── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Prerequisites
 
-### `npm run eject`
+Make sure you have the following installed:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js (v16+ recommended)
+- npm or yarn
+- MongoDB Atlas account (or local MongoDB)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Installation & Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1️⃣ Clone the repository
 
-## Learn More
+```bash
+git clone <repository-url>
+cd project-root
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2️⃣ Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Frontend
 
-### Code Splitting
+```bash
+cd client
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Backend
 
-### Analyzing the Bundle Size
+```bash
+cd server
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🔐 Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Create a `.env` file inside the **server** folder and add:
 
-### Advanced Configuration
+```
+PORT=4000
+MONGO_URI=your_mongodb_connection_string
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## ▶️ Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Start Backend Server
 
-### `npm run build` fails to minify
+```bash
+cd server
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Backend runs on:
+
+```
+http://localhost:4000/
+```
+
+### Start Frontend
+
+```bash
+cd client
+npm start
+```
+
+Frontend runs on:
+
+```
+http://localhost:3000/
+```
+
+---
+
+## ✨ Features
+
+- Add data through forms
+- View list of records
+- Update existing entries
+- Delete records
+- Clean & responsive UI
+- REST API integration
+
+---
+
+## 🧪 Scripts
+
+### Frontend
+
+- `npm start` – Start development server
+- `npm run build` – Build for production
+
+### Backend
+
+- `npm start` – Start server
+- `npm run dev` – Start with nodemon
+
+---
+
+## 🐞 Common Issues
+
+- **Port already in use**: Stop other services running on the same port
+- **MongoDB connection error**: Verify `MONGO_URI`
+- **CORS issue**: Ensure backend CORS is enabled
+
+---
+
+## 📌 Notes
+
+- Ensure backend is running before using frontend
+- Update API base URL if deploying to production
+
+---
+
+## 👤 Author
+
+**Aftab Ansari**
+
+---
+
+## 📄 License
+
+This project is licensed for educational and personal use.
