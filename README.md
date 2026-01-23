@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Setup & Usage
 
 This project runs locally on **[http://localhost:3000/](http://localhost:3000/)** and is a full‑stack web application built using modern JavaScript technologies.
@@ -159,3 +160,6 @@ http://localhost:3000/
 ## 📄 License
 
 This project is licensed for educational and personal use.
+=======
+# aapnaVideoCallFrontend
+>>>>>>> 291455f073002c77be1fb874eb11144c414fd61d
