@@ -159,7 +159,7 @@ export default function VideoMeetComponent() {
             socketRef.current.emit(
               "signal",
               id,
-              JSON.stringify({ sdp: connections[id].localDescription })
+              JSON.stringify({ sdp: connections[id].localDescription }),
             );
           })
           .catch((e) => console.log(e));
@@ -194,13 +194,13 @@ export default function VideoMeetComponent() {
                   socketRef.current.emit(
                     "signal",
                     id,
-                    JSON.stringify({ sdp: connections[id].localDescription })
+                    JSON.stringify({ sdp: connections[id].localDescription }),
                   );
                 })
                 .catch((e) => console.log(e));
             });
           }
-        })
+        }),
     );
   };
 
@@ -242,7 +242,7 @@ export default function VideoMeetComponent() {
             socketRef.current.emit(
               "signal",
               id,
-              JSON.stringify({ sdp: connections[id].localDescription })
+              JSON.stringify({ sdp: connections[id].localDescription }),
             );
           })
           .catch((e) => console.log(e));
@@ -267,7 +267,7 @@ export default function VideoMeetComponent() {
           localVideoref.current.srcObject = window.localStream;
 
           getUserMedia();
-        })
+        }),
     );
   };
 
@@ -291,7 +291,7 @@ export default function VideoMeetComponent() {
                         fromId,
                         JSON.stringify({
                           sdp: connections[fromId].localDescription,
-                        })
+                        }),
                       );
                     })
                     .catch((e) => console.log(e));
@@ -328,7 +328,7 @@ export default function VideoMeetComponent() {
       socketRef.current.on("user-joined", (id, clients) => {
         clients.forEach((socketListId) => {
           connections[socketListId] = new RTCPeerConnection(
-            peerConfigConnections
+            peerConfigConnections,
           );
           // Wait for their ice candidate
           connections[socketListId].onicecandidate = function (event) {
@@ -336,7 +336,7 @@ export default function VideoMeetComponent() {
               socketRef.current.emit(
                 "signal",
                 socketListId,
-                JSON.stringify({ ice: event.candidate })
+                JSON.stringify({ ice: event.candidate }),
               );
             }
           };
@@ -347,7 +347,7 @@ export default function VideoMeetComponent() {
             console.log("FINDING ID: ", socketListId);
 
             let videoExists = videoRef.current.find(
-              (video) => video.socketId === socketListId
+              (video) => video.socketId === socketListId,
             );
 
             if (videoExists) {
@@ -358,7 +358,7 @@ export default function VideoMeetComponent() {
                 const updatedVideos = videos.map((video) =>
                   video.socketId === socketListId
                     ? { ...video, stream: event.stream }
-                    : video
+                    : video,
                 );
                 videoRef.current = updatedVideos;
                 return updatedVideos;
@@ -407,7 +407,7 @@ export default function VideoMeetComponent() {
                   socketRef.current.emit(
                     "signal",
                     id2,
-                    JSON.stringify({ sdp: connections[id2].localDescription })
+                    JSON.stringify({ sdp: connections[id2].localDescription }),
                   );
                 })
                 .catch((e) => console.log(e));
